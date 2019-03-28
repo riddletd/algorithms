@@ -36,7 +36,7 @@ def reverse(arr):
         arr[N-i-1] = tmp
     return arr
 
-def matrix_square_mult(a, b):
+def matrix_mult_square(a, b):
     N = len(a)
     result = [[0 for x in range(len(a))] for y in range(len(b))]
 
@@ -96,34 +96,34 @@ def binary_search(key, arr):
 ########################################
 
 class Bag:
-    def __init__(self):
+    pass
 
 class Queue:
-    def __init__(self):
+    pass
 
 class Stack:
-    def __init__(self):
+    pass
 
 class PriorityQueueMin:
-    def __init__(self):
+    pass
 
 class PriorityQueueMax:
-    def __init__(self):
+    pass
 
 class PriorityQueueMinIndex:
-    def __init__(self):
+    pass
 
 class PriorityQueueMaxIndex:
-    def __init__(self):
+    pass
 
 class SymbolTable:
-    def __init__(self):
+    pass
 
 class SymbolTableString:
-    def __init__(self):
+    pass
 
 class Set:
-    def __init__(self):
+    pass
 
 
 ########################################
@@ -161,13 +161,13 @@ class Sort:
 ########################################
 
 class BinarySearchTree:
-    def __init__(self):
+    pass
 
 class BalancedSearchTree:
-    def __init__(self):
+    pass
 
 class HashTable:
-    def __init__(self):
+    pass
 
 
 ########################################
@@ -175,22 +175,22 @@ class HashTable:
 ########################################
 
 class Graph:
-    def __init__(self):
+    pass
 
 class DiGraph:
-    def __init__(self):
+    pass
 
 class EdgeGraph:
-    def __init__(self):
+    pass
 
 class EdgeGraphWeighted:
-    def __init__(self):
+    pass
 
 class EdgeDiGraph:
-    def __init__(self):
+    pass
 
 class EdgeDiGraphWeighted:
-    def __init__(self):
+    pass
 
 
 ########################################
@@ -251,10 +251,10 @@ class In:
         self.file = file
 
 class Output:
-    def __init__(self):
+    pass
 
 class Draw:
-    def __init__(self):
+    pass
 
 
 ########################################
@@ -267,16 +267,13 @@ class Point2D:
         self.y = y
 
 class Interval1D:
-    def __init__(self):
+    pass
 
 class Interval2D:
-    def __init__(self):
-
-class Date:
-    def __init__(self):
+    pass
 
 class Transaction:
-    def __init__(self):
+    pass
 
 
 ########################################
@@ -284,8 +281,7 @@ class Transaction:
 ########################################
 
 class Counter:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
         self.count = 0
 
     def inc(self):
@@ -293,12 +289,21 @@ class Counter:
 
 class Accumulator:
     def __init__(self):
+        self.total = 0
+        self.counter = Counter()
+
+    def add(self, val):
+        self.counter.inc()
+        self.total = self.total + val
+    
+    def avg(self):
+        return self.total / self.counter.count
 
 class VisualAccumulator:
-    def __init__(self):
+    pass
 
 class Stopwatch:
-    def __init__(self):
+    pass
 
 
 ########################################

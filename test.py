@@ -2,11 +2,8 @@
 
 import algorithms
 
-julie = algorithms.Counter("Julie")
-tdog = algorithms.Counter("T-Dog")
-julie.inc()
-tdog.inc()
-tdog.inc()
-tdog.inc()
-print(str(julie.count))
-print(str(tdog.count))
+acc = algorithms.Accumulator()
+acc.add(5)
+acc.add(10)
+print(str(acc.avg()))
+
