@@ -2,6 +2,10 @@
 
 import algorithms
 
-result = algorithms.harmonic_number(5)
-
-print(str(result))
+counter = algorithms.Counter("Julie")
+counter.inc()
+counter.inc()
+counter.inc()
+counter.dec()
+counter.inc()
+print(str(counter.getCount()))
