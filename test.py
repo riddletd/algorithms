@@ -2,10 +2,11 @@
 
 import algorithms
 
-counter = algorithms.Counter("Julie")
-counter.inc()
-counter.inc()
-counter.inc()
-counter.dec()
-counter.inc()
-print(str(counter.getCount()))
+julie = algorithms.Counter("Julie")
+tdog = algorithms.Counter("T-Dog")
+julie.inc()
+tdog.inc()
+tdog.inc()
+tdog.inc()
+print(str(julie.count))
+print(str(tdog.count))

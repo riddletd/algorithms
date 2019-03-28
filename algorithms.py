@@ -80,13 +80,13 @@ def harmonic_number(x):
     return sum
 
 # This returns the index of where the value passed in is.
-def binary_search(value, arr):
+def binary_search(key, arr):
     lo = 0
     hi = len(arr) - 1
     while lo <= hi:
         mid = int(lo + (hi - lo) / 2)
-        if    value < arr[mid]: hi = mid - 1
-        elif  value > arr[mid]: lo = mid + 1
+        if    key < arr[mid]: hi = mid - 1
+        elif  key > arr[mid]: lo = mid + 1
         else:                 return mid
     return int('NaN')
 
@@ -95,101 +95,102 @@ def binary_search(value, arr):
 # Collections
 ########################################
 
-def bag():
-    raise NotImplementedError
+class Bag:
+    def __init__(self):
 
-def queue():
-    raise NotImplementedError
+class Queue:
+    def __init__(self):
 
-def stack():
-    raise NotImplementedError
+class Stack:
+    def __init__(self):
 
-def min_priority_queue():
-    raise NotImplementedError
+class PriorityQueueMin:
+    def __init__(self):
 
-def max_priority_queue():
-    raise NotImplementedError
+class PriorityQueueMax:
+    def __init__(self):
 
-def index_min_priority_queue():
-    raise NotImplementedError
+class PriorityQueueMinIndex:
+    def __init__(self):
 
-def index_max_priority_queue():
-    raise NotImplementedError
+class PriorityQueueMaxIndex:
+    def __init__(self):
 
-def symbol_table():
-    raise NotImplementedError
+class SymbolTable:
+    def __init__(self):
 
-def string_symbol_table():
-    raise NotImplementedError
+class SymbolTableString:
+    def __init__(self):
 
-def object_set():
-    raise NotImplementedError
+class Set:
+    def __init__(self):
 
 
 ########################################
 # Sorts
 ########################################
 
-def insertion_sort():
-    raise NotImplementedError
+class Sort:
+    @staticmethod
+    def insertion_sort(parameter_list):
+        pass
 
-def selection_sort():
-    raise NotImplementedError
+    @staticmethod
+    def selection_sort(parameter_list):
+        pass
 
-def shell_sort():
-    raise NotImplementedError
+    @staticmethod
+    def shell_sort(parameter_list):
+        pass
 
-def quick_sort():
-    raise NotImplementedError
+    @staticmethod
+    def quick_sort(parameter_list):
+        pass
 
-def merge_sort():
-    raise NotImplementedError
+    @staticmethod
+    def merge_sort(parameter_list):
+        pass
 
-def heap_sort():
-    raise NotImplementedError
-
-def priority_queues():
-    raise NotImplementedError
+    @staticmethod
+    def heap_sort(parameter_list):
+        pass
 
 
 ########################################
 # Searching
 ########################################
 
-def symbol_table():
-    raise NotImplementedError
+class BinarySearchTree:
+    def __init__(self):
 
-def binary_search_tree():
-    raise NotImplementedError
+class BalancedSearchTree:
+    def __init__(self):
 
-def balanced_search_tree():
-    raise NotImplementedError
-
-def hash_table():
-    raise NotImplementedError
+class HashTable:
+    def __init__(self):
 
 
 ########################################
 # Data-Oriented Graph Types
 ########################################
 
-def undirected_graph():
-    raise NotImplementedError
+class Graph:
+    def __init__(self):
 
-def directed_graph():
-    raise NotImplementedError
+class DiGraph:
+    def __init__(self):
 
-def edge_graph():
-    raise NotImplementedError
+class EdgeGraph:
+    def __init__(self):
 
-def edge_weighted_graph():
-    raise NotImplementedError
+class EdgeGraphWeighted:
+    def __init__(self):
 
-def directed_edge_graph():
-    raise NotImplementedError
+class EdgeDiGraph:
+    def __init__(self):
 
-def directed_edge_weighted_graph():
-    raise NotImplementedError
+class EdgeDiGraphWeighted:
+    def __init__(self):
 
 
 ########################################
@@ -203,9 +204,6 @@ def connected_components():
     raise NotImplementedError
 
 def depth_first_search():
-    raise NotImplementedError
-
-def breadth_first_search():
     raise NotImplementedError
 
 def breadth_first_search():
@@ -252,12 +250,11 @@ class In:
     def __init__(self, file):
         self.file = file
 
+class Output:
+    def __init__(self):
 
-def output():
-    raise NotImplementedError
-
-def draw():
-    raise NotImplementedError
+class Draw:
+    def __init__(self):
 
 
 ########################################
@@ -269,18 +266,17 @@ class Point2D:
         self.x = x
         self.y = y
 
+class Interval1D:
+    def __init__(self):
 
-def interval_1D():
-    raise NotImplementedError
+class Interval2D:
+    def __init__(self):
 
-def interval_2D():
-    raise NotImplementedError
+class Date:
+    def __init__(self):
 
-def date():
-    raise NotImplementedError
-
-def transaction():
-    raise NotImplementedError
+class Transaction:
+    def __init__(self):
 
 
 ########################################
@@ -294,18 +290,15 @@ class Counter:
 
     def inc(self):
         self.count = self.count + 1
-    
-    def dec(self):
-        self.count = self.count - 1
 
-def accumulator():
-    raise NotImplementedError
+class Accumulator:
+    def __init__(self):
 
-def visual_accumulator():
-    raise NotImplementedError
+class VisualAccumulator:
+    def __init__(self):
 
-def stopwatch():
-    raise NotImplementedError
+class Stopwatch:
+    def __init__(self):
 
 
 ########################################
