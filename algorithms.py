@@ -182,6 +182,12 @@ class Node:
         self.data = None
         self.next = None
 
+class TwoWayNode:
+    def __init__(self):
+        self.data = None
+        self.next = None
+        self.prev = None
+
 class SinglyLinkedlist:
     def __init__(self, data):
         self.head = Node()
@@ -207,7 +213,37 @@ class SinglyLinkedlist:
 
 
 class DoublyLinkedList:
-    pass
+    def __init__(self, data):
+        self.head = TwoWayNode()
+        self.head.data = data
+        self.cursor = self.head
+        self.tail = self.head
+    
+    def append(self, val):
+        node = TwoWayNode()
+        node.data = val
+        self.tail = node
+        self.tail.prev = self.cursor
+        self.cursor.next = node
+        self.cursor = self.tail
+    
+    def printDLL(self):
+        val = self.head
+        while val is not None:
+            if val.next is not None:
+                print(val.data, end="->")
+            else:
+                print(val.data)
+            val = val.next
+    
+    def printDLLBackward(self):
+        val = self.tail
+        while val is not None:
+            if val.prev is not None:
+                print(val.data, end="<-")
+            else:
+                print(val.data)
+            val = val.prev
 
 
 ########################################

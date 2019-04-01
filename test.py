@@ -2,12 +2,13 @@
 
 import algorithms
 
-sll = algorithms.SinglyLinkedlist(5)
+sll = algorithms.DoublyLinkedList(3)
 sll.append(5)
 sll.append(7)
 sll.append(9)
 
-sll.printSLL()
+sll.printDLL()
+sll.printDLLBackward()
 
 
 
