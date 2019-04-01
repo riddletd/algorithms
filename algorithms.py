@@ -94,15 +94,62 @@ def binary_search(key, arr):
 ########################################
 # Collections
 ########################################
+from abc import ABC, abstractmethod
 
-class Bag:
-    pass
+class Iterable(ABC):
+    @abstractmethod
+    def isEmpty(self):
+        pass
 
-class Queue:
-    pass
+    @abstractmethod
+    def size(self):
+        pass
 
-class Stack:
-    pass
+class Bag(Iterable):
+    def __init__(self):
+        self.arr = []
+    
+    def add(self, x):
+        self.arr.append(x)
+    
+    def isEmpty(self):
+        return len(self.arr) == 0
+
+    def size(self):
+        return len(self.arr)
+
+class Queue(Iterable):
+    def __init__(self):
+        self.arr = []
+    
+    def enqueue(self, x):
+        self.arr.append(x)
+    
+    def dequeue(self):
+        return self.arr.pop(0)
+
+    def isEmpty(self):
+        return len(self.arr) == 0
+
+    def size(self):
+        return len(self.arr)
+
+
+class Stack(Iterable):
+    def __init__(self):
+        self.arr = []
+    
+    def push(self, x):
+        self.arr.append(x)
+    
+    def pop(self):
+        return self.arr.pop()
+    
+    def isEmpty(self):
+        return len(self.arr) == 0
+
+    def size(self):
+        return len(self.arr)
 
 class PriorityQueueMin:
     pass
