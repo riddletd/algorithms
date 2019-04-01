@@ -2,30 +2,13 @@
 
 import algorithms
 
-queue = algorithms.Queue()
-stack = algorithms.Stack()
-print("Size: ", str(stack.size()), " Empty?: ", str(stack.isEmpty()))
-stack.push(1)
-print("Size: ", str(stack.size()), " Empty?: ", str(stack.isEmpty()))
-stack.push(2)
-print("Size: ", str(stack.size()), " Empty?: ", str(stack.isEmpty()))
-stack.push(3)
-print("Size: ", str(stack.size()), " Empty?: ", str(stack.isEmpty()))
+sll = algorithms.SinglyLinkedlist(5)
+sll.append(5)
+sll.append(7)
+sll.append(9)
 
-print("Stack")
-print(str(stack.pop()))
-print(str(stack.pop()))
-print(str(stack.pop()))
+sll.printSLL()
 
-queue.enqueue(1)
-queue.enqueue(2)
-queue.enqueue(3)
-
-print("")
-print("Queue")
-print(str(queue.dequeue()))
-print(str(queue.dequeue()))
-print(str(queue.dequeue()))
 
 
 

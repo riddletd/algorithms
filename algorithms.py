@@ -92,7 +92,7 @@ def binary_search(key, arr):
 
 
 ########################################
-# Collections
+# Basic Collections
 ########################################
 from abc import ABC, abstractmethod
 
@@ -170,6 +170,43 @@ class SymbolTableString:
     pass
 
 class Set:
+    pass
+
+
+########################################
+# Collections Using Node
+########################################
+
+class Node:
+    def __init__(self):
+        self.data = None
+        self.next = None
+
+class SinglyLinkedlist:
+    def __init__(self, data):
+        self.head = Node()
+        self.head.data = data
+        self.cursor = self.head
+        self.tail = self.head
+    
+    def append(self, val):
+        node = Node()
+        node.data = val
+        self.tail = node
+        self.cursor.next = node
+        self.cursor = self.tail
+    
+    def printSLL(self):
+        val = self.head
+        while val is not None:
+            if val.next is not None:
+                print(val.data, end="->")
+            else:
+                print(val.data)
+            val = val.next
+
+
+class DoublyLinkedList:
     pass
 
 
