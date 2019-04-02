@@ -2,16 +2,14 @@
 
 import algorithms
 
-sll = algorithms.DoublyLinkedList(3)
-sll.append(5)
-sll.append(7)
-sll.append(9)
+queue = algorithms.NodeQueue()
 
-sll.printDLL()
-sll.printDLLBackward()
+queue.enqueue(5)
+queue.enqueue(6)
+queue.enqueue(10)
+queue.enqueue(132)
 
-
-
-
-
-
+print(str(queue.dequeue()))
+print(str(queue.dequeue()))
+print(str(queue.dequeue()))
+print(str(queue.dequeue()))

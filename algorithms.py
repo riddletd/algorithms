@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 
+################################################################################
+# Code Author: Trevor Riddle
+# Start Date: March 26, 2019
+# 
+# Resource: Algorithms 4th Edt. 
+#   - By: Robert Sedgewick & Kevin Wayne
+# 
+# This code was written for learning purposes. It will be freely available
+# on GitHub for public use.
+################################################################################
+
+
 ########################################
 # Book Algorithm Examples
 ########################################
@@ -134,7 +146,6 @@ class Queue(Iterable):
     def size(self):
         return len(self.arr)
 
-
 class Stack(Iterable):
     def __init__(self):
         self.arr = []
@@ -206,11 +217,10 @@ class SinglyLinkedlist:
         val = self.head
         while val is not None:
             if val.next is not None:
-                print(val.data, end="->")
+                print(val.data, end = "->")
             else:
                 print(val.data)
             val = val.next
-
 
 class DoublyLinkedList:
     def __init__(self, data):
@@ -244,6 +254,55 @@ class DoublyLinkedList:
             else:
                 print(val.data)
             val = val.prev
+
+class NodeStack:
+    def __init__(self):
+        self.head = None
+        self.size = 0
+    
+    def push(self, data):
+        old = self.head
+        self.head = Node()
+        self.head.data = data
+        self.head.next = old
+        self.size = self.size + 1
+
+    def pop(self):
+        data = self.head.data
+        self.head = self.head.next
+        self.size = self.size - 1
+        return data
+
+class NodeQueue(Iterable):
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.size = 0
+    
+    def enqueue(self, data):
+        old = self.tail
+        self.tail = Node()
+        self.tail.data = data
+        self.tail.next = None
+        if self.isEmpty():
+            self.head = self.tail
+        else:
+            old.next = self.tail
+        self.size = self.size + 1
+
+    def dequeue(self):
+        data = self.head.data
+        self.head = self.head.next
+        if self.isEmpty():
+            self.tail = None
+        self.size = self.size - 1
+        return data
+    
+    def isEmpty(self):
+        return self.head == None
+
+    def size(self):
+        return self.size
 
 
 ########################################
