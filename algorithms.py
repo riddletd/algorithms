@@ -343,6 +343,24 @@ class NodeQueue(Iterable):
     def size(self):
         return self.N
 
+class NodeBag(Iterable):
+    def __init__(self):
+        self.head = None
+        self.size = 0
+
+    def add(self, data):
+        old = self.head
+        self.head = Node()
+        self.head.data = data
+        self.head.next = None
+        self.size = self.size + 1
+
+    def isEmpty(self):
+        return self.size != 0
+
+    def size(self):
+        return self.size
+
 
 ########################################
 # Sorts
