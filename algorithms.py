@@ -3,10 +3,10 @@
 ################################################################################
 # Code Author: Trevor Riddle
 # Start Date: March 26, 2019
-# 
-# Resource: Algorithms 4th Edt. 
+#
+# Resource: Algorithms 4th Edt.
 #   - By: Robert Sedgewick & Kevin Wayne
-# 
+#
 # This code was written for learning purposes. It will be freely available
 # on GitHub for public use.
 ################################################################################
@@ -16,10 +16,14 @@
 # Book Algorithm Examples
 ########################################
 
+from abc import ABC, abstractmethod
+
+
 def gcd(p, q):
     if q == 0:
         return p
     return gcd(q, p % q)
+
 
 def max(arr):
     max = arr[0]
@@ -28,17 +32,20 @@ def max(arr):
             max = value
     return max
 
+
 def avg(arr):
     sum = 0.0
     for value in arr:
         sum += value
     return sum / len(arr)
 
+
 def copy(arr):
     copy = []
     for value in arr:
         copy.append(value)
     return copy
+
 
 def reverse(arr):
     N = len(arr)
@@ -47,6 +54,7 @@ def reverse(arr):
         arr[i] = arr[N-1-i]
         arr[N-i-1] = tmp
     return arr
+
 
 def matrix_mult_square(a, b):
     N = len(a)
@@ -61,29 +69,40 @@ def matrix_mult_square(a, b):
                 result[i][j] += a_times_b
     return result
 
+
 def abs(x):
-    if x < 0: return -x
-    else: return x
+    if x < 0:
+        return -x
+    else:
+        return x
+
 
 def isPrime(x):
-    if (x < 2): return False
+    if (x < 2):
+        return False
     i = 2
     while(True):
-        if i*i > x: break
-        if (x % i == 0): return False
+        if i*i > x:
+            break
+        if (x % i == 0):
+            return False
         i = i + 1
     return True
 
+
 def sqrt(x):
-    if x < 0: return float('NaN')
+    if x < 0:
+        return float('NaN')
     ans = x
     precision = 1e-15
     while (abs(ans - x/ans) > precision * 1):
         ans = (x/ans + ans) / 2
     return ans
 
-def hypotenuse_of_right_triangle(x, y): 
+
+def hypotenuse_of_right_triangle(x, y):
     return sqrt(x*x + y*y)
+
 
 def harmonic_number(x):
     sum = 0.0
@@ -92,21 +111,26 @@ def harmonic_number(x):
     return sum
 
 # This returns the index of where the value passed in is.
+
+
 def binary_search(key, arr):
     lo = 0
     hi = len(arr) - 1
     while lo <= hi:
         mid = int(lo + (hi - lo) / 2)
-        if    key < arr[mid]: hi = mid - 1
-        elif  key > arr[mid]: lo = mid + 1
-        else:                 return mid
+        if key < arr[mid]:
+            hi = mid - 1
+        elif key > arr[mid]:
+            lo = mid + 1
+        else:
+            return mid
     return int('NaN')
 
 
 ########################################
 # Basic Collections
 ########################################
-from abc import ABC, abstractmethod
+
 
 class Iterable(ABC):
     @abstractmethod
@@ -117,26 +141,28 @@ class Iterable(ABC):
     def size(self):
         pass
 
+
 class Bag(Iterable):
     def __init__(self):
         self.arr = []
-    
+
     def add(self, x):
         self.arr.append(x)
-    
+
     def isEmpty(self):
         return len(self.arr) == 0
 
     def size(self):
         return len(self.arr)
 
+
 class Queue(Iterable):
     def __init__(self):
         self.arr = []
-    
+
     def enqueue(self, x):
         self.arr.append(x)
-    
+
     def dequeue(self):
         return self.arr.pop(0)
 
@@ -146,39 +172,47 @@ class Queue(Iterable):
     def size(self):
         return len(self.arr)
 
+
 class Stack(Iterable):
     def __init__(self):
         self.arr = []
-    
+
     def push(self, x):
         self.arr.append(x)
-    
+
     def pop(self):
         return self.arr.pop()
-    
+
     def isEmpty(self):
         return len(self.arr) == 0
 
     def size(self):
         return len(self.arr)
 
+
 class PriorityQueueMin:
     pass
+
 
 class PriorityQueueMax:
     pass
 
+
 class PriorityQueueMinIndex:
     pass
+
 
 class PriorityQueueMaxIndex:
     pass
 
+
 class SymbolTable:
     pass
 
+
 class SymbolTableString:
     pass
+
 
 class Set:
     pass
@@ -193,11 +227,13 @@ class Node:
         self.data = None
         self.next = None
 
+
 class TwoWayNode:
     def __init__(self):
         self.data = None
         self.next = None
         self.prev = None
+
 
 class SinglyLinkedlist:
     def __init__(self, data):
@@ -205,22 +241,23 @@ class SinglyLinkedlist:
         self.head.data = data
         self.cursor = self.head
         self.tail = self.head
-    
+
     def append(self, val):
         node = Node()
         node.data = val
         self.tail = node
         self.cursor.next = node
         self.cursor = self.tail
-    
+
     def printSLL(self):
         val = self.head
         while val is not None:
             if val.next is not None:
-                print(val.data, end = "->")
+                print(val.data, end="->")
             else:
                 print(val.data)
             val = val.next
+
 
 class DoublyLinkedList:
     def __init__(self, data):
@@ -228,7 +265,7 @@ class DoublyLinkedList:
         self.head.data = data
         self.cursor = self.head
         self.tail = self.head
-    
+
     def append(self, val):
         node = TwoWayNode()
         node.data = val
@@ -236,7 +273,7 @@ class DoublyLinkedList:
         self.tail.prev = self.cursor
         self.cursor.next = node
         self.cursor = self.tail
-    
+
     def printDLL(self):
         val = self.head
         while val is not None:
@@ -245,7 +282,7 @@ class DoublyLinkedList:
             else:
                 print(val.data)
             val = val.next
-    
+
     def printDLLBackward(self):
         val = self.tail
         while val is not None:
@@ -255,30 +292,32 @@ class DoublyLinkedList:
                 print(val.data)
             val = val.prev
 
+
 class NodeStack:
     def __init__(self):
         self.head = None
-        self.size = 0
-    
+        self.N = 0
+
     def push(self, data):
         old = self.head
         self.head = Node()
         self.head.data = data
         self.head.next = old
-        self.size = self.size + 1
+        self.N = self.N + 1
 
     def pop(self):
         data = self.head.data
         self.head = self.head.next
-        self.size = self.size - 1
+        self.N = self.N - 1
         return data
+
 
 class NodeQueue(Iterable):
     def __init__(self):
         self.head = None
         self.tail = None
-        self.size = 0
-    
+        self.N = 0
+
     def enqueue(self, data):
         old = self.tail
         self.tail = Node()
@@ -288,21 +327,21 @@ class NodeQueue(Iterable):
             self.head = self.tail
         else:
             old.next = self.tail
-        self.size = self.size + 1
+        self.N = self.N + 1
 
     def dequeue(self):
         data = self.head.data
         self.head = self.head.next
         if self.isEmpty():
             self.tail = None
-        self.size = self.size - 1
+        self.N = self.N - 1
         return data
-    
+
     def isEmpty(self):
         return self.head == None
 
     def size(self):
-        return self.size
+        return self.N
 
 
 ########################################
@@ -342,8 +381,10 @@ class Sort:
 class BinarySearchTree:
     pass
 
+
 class BalancedSearchTree:
     pass
+
 
 class HashTable:
     pass
@@ -356,17 +397,22 @@ class HashTable:
 class Graph:
     pass
 
+
 class DiGraph:
     pass
+
 
 class EdgeGraph:
     pass
 
+
 class EdgeGraphWeighted:
     pass
 
+
 class EdgeDiGraph:
     pass
+
 
 class EdgeDiGraphWeighted:
     pass
@@ -379,23 +425,30 @@ class EdgeDiGraphWeighted:
 def dynamic_connectivity():
     raise NotImplementedError
 
+
 def connected_components():
     raise NotImplementedError
+
 
 def depth_first_search():
     raise NotImplementedError
 
+
 def breadth_first_search():
     raise NotImplementedError
+
 
 def kruskal_minimum_spanning_tree():
     raise NotImplementedError
 
+
 def prim_minimum_spanning_tree():
     raise NotImplementedError
 
+
 def dijkstra_shortest_path():
     raise NotImplementedError
+
 
 def bellman_ford_shortest_path():
     raise NotImplementedError
@@ -408,14 +461,18 @@ def bellman_ford_shortest_path():
 def sort_string():
     raise NotImplementedError
 
+
 def try_string():
     raise NotImplementedError
+
 
 def substring_search():
     raise NotImplementedError
 
+
 def regex_match():
     raise NotImplementedError
+
 
 def compress_data():
     raise NotImplementedError
@@ -429,8 +486,10 @@ class In:
     def __init__(self, file):
         self.file = file
 
+
 class Output:
     pass
+
 
 class Draw:
     pass
@@ -445,11 +504,14 @@ class Point2D:
         self.x = x
         self.y = y
 
+
 class Interval1D:
     pass
 
+
 class Interval2D:
     pass
+
 
 class Transaction:
     pass
@@ -466,6 +528,7 @@ class Counter:
     def inc(self):
         self.count = self.count + 1
 
+
 class Accumulator:
     def __init__(self):
         self.total = 0
@@ -474,12 +537,14 @@ class Accumulator:
     def add(self, val):
         self.counter.inc()
         self.total = self.total + val
-    
+
     def avg(self):
         return self.total / self.counter.count
 
+
 class VisualAccumulator:
     pass
+
 
 class Stopwatch:
     pass
@@ -495,11 +560,14 @@ class Stopwatch:
 def event_based_simulation():
     raise NotImplementedError
 
+
 def b_tree():
     raise NotImplementedError
 
+
 def suffix_array():
     raise NotImplementedError
+
 
 def max_flow():
     raise NotImplementedError
