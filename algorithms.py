@@ -354,7 +354,6 @@ class NodeBag():
     def printBag(self):
         self.ll.printSLL()
 
-        
 
 ########################################
 # Sorts

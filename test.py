@@ -4,5 +4,4 @@ import algorithms
 
 bag = algorithms.NodeBag(89)
 
-
 bag.printBag()
