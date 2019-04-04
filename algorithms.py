@@ -360,6 +360,7 @@ class NodeBag(Iterable):
 
     def size(self):
         return self.size
+        
 
 
 ########################################
