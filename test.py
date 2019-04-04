@@ -2,14 +2,7 @@
 
 import algorithms
 
-queue = algorithms.NodeQueue()
+bag = algorithms.NodeBag(89)
 
-queue.enqueue(5)
-queue.enqueue(6)
-queue.enqueue(10)
-queue.enqueue(132)
 
-print(str(queue.dequeue()))
-print(str(queue.dequeue()))
-print(str(queue.dequeue()))
-print(str(queue.dequeue()))
+bag.printBag()
